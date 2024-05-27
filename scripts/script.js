@@ -32,4 +32,3 @@ function prevSlide() {
 
 // 자동 슬라이드 전환 기능 추가
 let slideInterval = setInterval(nextSlide, 3000);
-
