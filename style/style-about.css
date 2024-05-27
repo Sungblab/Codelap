@@ -1,3 +1,60 @@
 .container p {
   font-size: 1.5rem;
 }
+
+#disqus_thread {
+  width: 90%; /* 원하는 너비로 조정 */
+  max-width: 80rem; /* 최대 너비 제한 */
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Sunflower", sans-serif; /* 원하는 폰트로 변경 */
+}
+
+#disqus_thread h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#disqus_thread .comment {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#disqus_thread .comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#disqus_thread .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#disqus_thread .comment-author {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+#disqus_thread .comment-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+#disqus_thread .comment-footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
