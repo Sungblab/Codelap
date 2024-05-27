@@ -66,3 +66,41 @@ h2 {
 .btn:hover {
   background-color: #45a049;
 }
+
+@media (max-width: 800px) {
+  .portfolio-container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .project {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .project h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .project-image {
+    max-height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .project p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
