@@ -1,8 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeLap</title>
+    <meta
+      name="description"
+      content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다"
+    />
+    <meta name="keywords" content="programming, code, coding" />
+    <meta name="author" content="Sungbin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="codelap" />
+    <meta
+      property="og:description"
+      content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다"
+    />
+    <meta property="og:url" content="https://codelap.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://codelap.netlify.app/assets/images/content.png"
+    />
+    <meta property="og:image:alt" content="이미지 대체 텍스트" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="robots" content="index, follow" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,89 +50,256 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans KR", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/095bb43c6c.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/style-index.css" />
-    <script src="/scripts/script.js"></script>
-    <meta name="description" content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다">
-    <meta name="keywords" content="programming, code, coding">
-    <meta name="author" content="Sungbin">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="codelap">
-    <meta property="og:site_name	" content="codelap">
-    <meta property="og:url" content="https://codelap.netlify.app/">
-    <meta name="robots" content="index, follow">
-    <meta property="og:image" content="https://codelap.netlify.app/assets/images/content.png">
-    <meta property="og:image:alt" content="이미지 대체 텍스트">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <title>CodeLap</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <a href="/index.html">&#60;/&#62;CodeLap</a>
+  <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <nav class="bg-gray-800 text-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex items-center">
+            <a href="/index.html" class="text-3xl font-bold tracking-wider"
+              >&#60;/&#62;CodeLap</a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-6">
+              <a
+                href="/index.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >Home</a
+              >
+              <a
+                href="/portfolio.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >Portfolio</a
+              >
+              <a
+                href="/about.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >About</a
+              >
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed -->
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!-- Icon when menu is open -->
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <input type="checkbox" id="isChecked" />
-      <label for="isChecked" class="menu-btn">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-times"></i>
-      </label>
-      <ul class="menu">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="/index.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >Home</a
+          >
+          <a
+            href="/portfolio.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >Portfolio</a
+          >
+          <a
+            href="/about.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >About</a
+          >
+        </div>
+      </div>
     </nav>
 
-    <div class="container">
-      <h1>Welcome to CodeLap!</h1>
-      <p>2024 완도고등학교 프로그래밍 동아리 CodeLap 웹사이트 입니다.</p>
-      <p>저희 동아리 소개및, 동아리 부원들의 포트폴리오 사이트입니다.</p>
+    <main class="flex-grow max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="bg-white shadow-lg rounded-lg p-6 md:p-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Welcome to CodeLap!</h1>
+        <p class="text-xl md:text-2xl mb-6">
+          2024 완도고등학교 프로그래밍 동아리 CodeLap 웹사이트 입니다.
+        </p>
+        <p class="text-lg md:text-xl mb-8">
+          저희 동아리 소개 및 동아리 부원들의 포트폴리오 사이트입니다.
+        </p>
 
-      <div id="date"></div>
-      <div id="clock"></div>
+        <div id="date" class="text-2xl font-semibold mb-2"></div>
+        <div id="clock" class="text-4xl font-bold mb-8"></div>
 
-      <script src="/scripts/clock.js"></script>
-
-      <div class="slideshow-container">
-        <div class="slide">
-          <img src="/assets/images/img1.jpg" alt="Image 1" />
+        <div class="relative" x-data="{ activeSlide: 0 }">
+          <div class="overflow-hidden rounded-lg shadow-xl">
+            <div
+              class="flex transition-transform duration-300 ease-in-out"
+              :style="{ transform: `translateX(-${activeSlide * 100}%)` }"
+            >
+              <div class="w-full flex-shrink-0">
+                <img
+                  src="/assets/images/img1.jpg"
+                  alt="Image 1"
+                  class="w-full h-[30rem] md:h-[40rem] object-cover"
+                />
+              </div>
+              <div class="w-full flex-shrink-0">
+                <img
+                  src="/assets/images/image2.jpg"
+                  alt="Image 2"
+                  class="w-full h-[30rem] md:h-[40rem] object-cover"
+                />
+              </div>
+              <div class="w-full flex-shrink-0">
+                <img
+                  src="/assets/images/image3.jpg"
+                  alt="Image 3"
+                  class="w-full h-[30rem] md:h-[40rem] object-cover"
+                />
+              </div>
+              <div class="w-full flex-shrink-0">
+                <img
+                  src="/assets/images/image4.jpg"
+                  alt="Image 4"
+                  class="w-full h-[30rem] md:h-[40rem] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            @click="activeSlide = (activeSlide - 1 + 4) % 4"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-r-lg"
+          >
+            &#10094;
+          </button>
+          <button
+            @click="activeSlide = (activeSlide + 1) % 4"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-l-lg"
+          >
+            &#10095;
+          </button>
+          <div
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+          >
+            <template x-for="(_, index) in [0,1,2,3]" :key="index">
+              <button
+                @click="activeSlide = index"
+                :class="{ 'bg-white': activeSlide === index, 'bg-gray-400': activeSlide !== index }"
+                class="w-3 h-3 rounded-full"
+              ></button>
+            </template>
+          </div>
         </div>
-        <div class="slide">
-          <img src="/assets/images/image2.jpg" alt="Image 2" />
-        </div>
-        <div class="slide">
-          <img src="/assets/images/image3.jpg" alt="Image 3" />
-        </div>
-        <div class="slide">
-          <img src="/assets/images/image4.jpg" alt="Image 4" />
-        </div>
-        <a class="prev" onclick="prevSlide()">&#10094;</a>
-        <a class="next" onclick="nextSlide()">&#10095;</a>
       </div>
+    </main>
 
-      <div class="dots-container">
-        <span class="dot" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-        <span class="dot" onclick="showSlide(3)"></span>
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-lg">&copy; 2024 CodeLap. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+          <a
+            href="https://github.com/Kimsungbin1/Codelap"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <span class="sr-only">GitHub</span>
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
       </div>
-    </div>
-
-    <footer>
-      <p>&copy; 2024 CodeLap. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+      function updateDateTime() {
+        const now = new Date();
+        const dateElement = document.getElementById("date");
+        const clockElement = document.getElementById("clock");
+
+        const dateOptions = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        dateElement.textContent = now.toLocaleDateString("ko-KR", dateOptions);
+
+        const timeOptions = {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+        clockElement.textContent = now.toLocaleTimeString("ko-KR", timeOptions);
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime();
+
+      // 모바일 메뉴 토글 스크립트
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+
+          // 아이콘 변경
+          const openIcon = mobileMenuButton.querySelector(".block");
+          const closeIcon = mobileMenuButton.querySelector(".hidden");
+          openIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+      });
+    </script>
   </body>
 </html>

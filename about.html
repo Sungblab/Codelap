@@ -1,8 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - CodeLap</title>
+    <meta
+      name="description"
+      content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다"
+    />
+    <meta name="keywords" content="programming, code, coding" />
+    <meta name="author" content="Sungbin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About - CodeLap" />
+    <meta
+      property="og:description"
+      content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다"
+    />
+    <meta property="og:url" content="https://codelap.netlify.app/about.html" />
+    <meta
+      property="og:image"
+      content="https://codelap.netlify.app/assets/images/content.png"
+    />
+    <meta property="og:image:alt" content="이미지 대체 텍스트" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="robots" content="index, follow" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,87 +50,196 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans KR", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/095bb43c6c.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/style-index.css" />
-    <link rel="stylesheet" href="/style/style-about.css" />
-    <meta name="description" content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다">
-    <meta name="keywords" content="programming, code, coding">
-    <meta name="author" content="Sungbin">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="프로그래밍 동아리 CodeLap의 포트폴리오 사이트 입니다">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="codelap">
-    <meta property="og:site_name	" content="codelap">
-    <meta property="og:url" content="https://codelap.netlify.app/">
-    <meta name="robots" content="index, follow">
-    <meta property="og:image" content="https://codelap.netlify.app/assets/images/content.png">
-    <meta property="og:image:alt" content="이미지 대체 텍스트">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <title>CodeLap</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <a href="/index.html">&#60;/&#62;CodeLap</a>
+  <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <nav class="bg-gray-800 text-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex items-center">
+            <a href="/index.html" class="text-3xl font-bold tracking-wider"
+              >&#60;/&#62;CodeLap</a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-6">
+              <a
+                href="/index.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >Home</a
+              >
+              <a
+                href="/portfolio.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >Portfolio</a
+              >
+              <a
+                href="/about.html"
+                class="px-4 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300"
+                >About</a
+              >
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed -->
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!-- Icon when menu is open -->
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <input type="checkbox" id="isChecked" />
-      <label for="isChecked" class="menu-btn">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-times"></i>
-      </label>
-      <ul class="menu">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="/index.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >Home</a
+          >
+          <a
+            href="/portfolio.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >Portfolio</a
+          >
+          <a
+            href="/about.html"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 transition duration-300"
+            >About</a
+          >
+        </div>
+      </div>
     </nav>
 
-    <div class="container">
-      <h1>About us</h1>
-      <p>
-        안녕하세요, 반갑습니다 저희는 2024 완도고등학교 프로그래밍 동아리 <br />
-        CodeLap 입니다. 이 사이트를 만든 저는 동아리 단장 김성빈 이라고 합니다.
-        <br />
-        이 웹사이트는 저희 동아리의 1년간 포트폴리오를 정리 하려고만든 <br />
-        프론트웬드 웹사이트 입니다. 부족한 실력이지만 너그럽게 봐주세요. <br />
-        혹시라도 궁금한 점이 있다면
-        <a href="mailto:ksb19558@naver.com">ksb19558@naver.com</a>
-        으로 연락 주십쇼.
-      </p>
-      <div id="disqus_thread"></div>
-      <script>
-          /**
-          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-          /*
-          var disqus_config = function () {
-          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          */
-          (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
-          s.src = 'https://codelab-5.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
+    <main class="flex-grow max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="bg-white shadow-lg rounded-lg p-6 md:p-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About us</h1>
+        <div class="text-lg md:text-xl space-y-4">
+          <p>
+            안녕하세요, 반갑습니다 저희는 2024 완도고등학교 프로그래밍 동아리
+            CodeLap 입니다. 이 사이트를 만든 저는 동아리 단장 김성빈 이라고
+            합니다.
+          </p>
+          <p>
+            이 웹사이트는 저희 동아리의 1년간 포트폴리오를 정리 하려고만든
+            프론트엔드 웹사이트 입니다. 부족한 실력이지만 너그럽게 봐주세요.
+          </p>
+          <p>
+            혹시라도 궁금한 점이 있다면
+            <a
+              href="mailto:ksb19558@naver.com"
+              class="text-blue-600 hover:underline"
+              >ksb19558@naver.com</a
+            >
+            으로 연락 주십시오.
+          </p>
+        </div>
+        <div id="disqus_thread" class="mt-8"></div>
+        <script>
+          (function () {
+            var d = document,
+              s = d.createElement("script");
+            s.src = "https://codelab-5.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
           })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+        </script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+          ></noscript
+        >
+      </div>
+    </main>
 
-    <footer>
-      <p>&copy; 2024 CodeLap. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-lg">&copy; 2024 CodeLap. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+          <a
+            href="https://github.com/Kimsungbin1/Codelap"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <span class="sr-only">GitHub</span>
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+
+          // 아이콘 변경
+          const openIcon = mobileMenuButton.querySelector(".block");
+          const closeIcon = mobileMenuButton.querySelector(".hidden");
+          openIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
